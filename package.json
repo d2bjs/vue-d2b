@@ -1,0 +1,57 @@
+{
+  "name": "vue-d2b",
+  "version": "2.0.0-beta.4",
+  "dependencies": {
+    "d2b": "beta",
+    "d3-selection": "^1.4.0",
+    "d3-transition": "^1.2.0",
+    "vue-property-decorator": "^7.0.0"
+  },
+  "deprecated": false,
+  "description": "## Project setup ``` yarn install ```",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.4.2",
+    "@types/d3": "^5.7.1",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-typescript": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.14",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-utilities": "^0.8.0",
+    "precss": "^4.0.0",
+    "rollup": "^1.7.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.2",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-uglify": "^6.0.2",
+    "rollup-plugin-vue": "^4.7.2",
+    "sass-loader": "^7.1.0",
+    "tslib": "*",
+    "typescript": "^3.2.1",
+    "uglify-es": "^3.3.9",
+    "vue": "^2.6.6",
+    "vue-class-component": "^6.0.0",
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^3.0.0"
+  },
+  "files": [
+    "/dist",
+    "/src"
+  ],
+  "main": "dist/vue-d2b.common.js",
+  "private": false,
+  "scripts": {
+    "build": "vue-cli-service build",
+    "build-bundle": "yarn build-bundle:uglified && yarn build-bundle:prod",
+    "build-bundle:prod": "rollup -c rollup.config.js -g d3-selection:d3,d3-transition:d3,d2b:d2b,vue-property-decorator:VuePropertyDecorator",
+    "build-bundle:uglified": "NODE_ENV=production rollup -c rollup.config.js -g d3-selection:d3,d3-transition:d3,d2b:d2b,vue-property-decorator:VuePropertyDecorator",
+    "lint": "vue-cli-service lint",
+    "serve": "vue-cli-service serve"
+  },
+  "unpkg": "dist/vue-d2b.min.js"
+}
