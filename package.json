@@ -8,7 +8,6 @@
     "vue-property-decorator": "^7.0.0"
   },
   "deprecated": false,
-  "description": "## Project setup ``` yarn install ```",
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/preset-env": "^7.4.2",

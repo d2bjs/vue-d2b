@@ -20,7 +20,7 @@
     @Prop({ default: id }) private id!: any;
     @Prop({ default: true }) private advanced!: boolean;
 
-    private unwatch = null;
+    private unwatch = () => {};
 
     get properties() {
       return {
