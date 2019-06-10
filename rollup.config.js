@@ -19,7 +19,7 @@ let plugins = [
     defaultLang: { script: 'ts' }
   }),
   postcss({
-    extensions: ['.css', '.scss'],
+    extensions: ['.css'],
     plugins: [
       precss(),
       postcssPresetEnv({ stage: 0 }),
