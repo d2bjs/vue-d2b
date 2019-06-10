@@ -1,6 +1,6 @@
 {
   "name": "vue-d2b",
-  "version": "2.0.0",
+  "version": "2.0.0-beta.7",
   "dependencies": {
     "d2b": "beta",
     "d3-selection": "^1.4.0",
@@ -42,7 +42,7 @@
     "/dist",
     "/src"
   ],
-  "main": "dist/vue-d2b.common.js",
+  "main": "dist/vue-d2b.cjs.js",
   "private": false,
   "scripts": {
     "build": "vue-cli-service build",
