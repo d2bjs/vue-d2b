@@ -2560,10 +2560,10 @@ cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
 
-d2b@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/d2b/-/d2b-1.0.6.tgz#c50c0c56a71d3f7a503268dfbf9c472d139af224"
-  integrity sha512-oySb+jKaoLSVe1H4yt1dDwKYzBKdVE2pyIyjgLsL6yReH+n/hHEK4+aOgpj6FsuP/4DqAhgMDcqrGG8+b+ph5g==
+d2b@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/d2b/-/d2b-1.0.7.tgz#4c99cb991c1617e7eaeedbb24c966b4d618085b9"
+  integrity sha512-JWBKP2b4uZ+LoTscJvakCPyjkuMFiadJfVlJiM7b2Lpz8QU8Q89uJX1oCZVA688clU9syBNi3IfGIWbWHi9tow==
   dependencies:
     d3-array "^2.0.3"
     d3-axis "^1.0.12"
@@ -7646,7 +7646,7 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webpack-bundle-analyzer@^3.3.2:
+webpack-bundle-analyzer@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/webpack-bundle-analyzer/-/webpack-bundle-analyzer-3.3.2.tgz#3da733a900f515914e729fcebcd4c40dde71fc6f"
   integrity sha512-7qvJLPKB4rRWZGjVp5U1KEjwutbDHSKboAl0IfafnrdXMrgC0tOtZbQD6Rw0u4cmpgRN4O02Fc0t8eAT+FgGzA==
