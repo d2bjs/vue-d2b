@@ -2,7 +2,7 @@
   "name": "vue-d2b",
   "version": "2.0.0",
   "dependencies": {
-    "d2b": "1.0.7",
+    "d2b": "1.0.8",
     "d3-selection": "^1.4.0",
     "d3-transition": "^1.2.0",
     "vue-property-decorator": "^7.0.0"
