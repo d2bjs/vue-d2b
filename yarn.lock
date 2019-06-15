@@ -2560,10 +2560,10 @@ cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
 
-d2b@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/d2b/-/d2b-1.0.8.tgz#a2fa777fb2ed2faf90dffacc953013905dee3d06"
-  integrity sha512-CzwyDEI8oIC/KWg3qzJIl76oQABA7kmCQD61dbZYXZNRz09j0KNkTMsYCVCt68ScxITFz4o70z5NavsvD2J2jg==
+d2b@1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/d2b/-/d2b-1.0.9.tgz#e310414ee03dd03d16a6d919feca8ad3f8604cff"
+  integrity sha512-bHxuCpy6JpXVB97VvWvcSJ2W7oPShalwubfaNp+GGwI1L6CPtHjIgHzXYNlx4D91mEozi8c2uPm77NLVRoYFlA==
   dependencies:
     d3-array "^2.0.3"
     d3-axis "^1.0.12"
