@@ -6,6 +6,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import vue from 'rollup-plugin-vue';
 import typescript from 'rollup-plugin-typescript';
 import resolve from 'rollup-plugin-node-resolve';
+import replace from 'rollup-plugin-replace';
 
 // Postcss plugins
 import precss from 'precss';
@@ -34,26 +35,56 @@ let plugins = [
   babel({
     exclude: 'node_modules/**',
     extensions: ['.js', '.jsx', '.ts', '.vue']
-  }),
+  })
 ];
 
-let outputs = [
-  {
-    file: 'dist/vue-d2b.cjs.js',
-    sourceMap: 'inline',
-    format: 'cjs',
-    name: 'vued2b'
-  },
-  {
-    file: 'dist/vue-d2b.js',
-    format: 'iife',
-    globals: {'d2b': 'd2b', 'd3-selection': 'd3', 'd3-transition': 'd3', 'vue': 'Vue'},
-    sourceMap: 'inline',
-    name: 'vued2b'
-  },
-];
+// let outputs = [
+//   {
+//     file: 'dist/vue-d2b.cjs.js',
+//     sourceMap: 'inline',
+//     format: 'cjs',
+//     name: 'vued2b'
+//   },
+//   {
+//     file: 'dist/vue-d2b.js',
+//     format: 'iife',
+//     globals: {'d2b': 'd2b', 'd3-selection': 'd3', 'd3-transition': 'd3', 'vue': 'Vue'},
+//     sourceMap: 'inline',
+//     name: 'vued2b'
+//   },
+// ];
 
-if (process.env.NODE_ENV === 'production') {
+var outputs;
+
+if (process.env.BUILD === 'cjs') {
+  outputs = [
+    {
+      file: 'dist/vue-d2b.cjs.js',
+      sourceMap: 'inline',
+      format: 'cjs',
+      name: 'vued2b'
+    },
+  ];
+}
+if (process.env.BUILD === 'js') {
+  outputs = [
+    {
+      file: 'dist/vue-d2b.js',
+      format: 'iife',
+      globals: {'d2b': 'd2b', 'd3-selection': 'd3', 'd3-transition': 'd3', 'vue': 'Vue'},
+      sourceMap: 'inline',
+      name: 'vued2b'
+    },
+  ];
+
+  plugins.push(
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.VUE_ENV': JSON.stringify('browser')
+    })
+  );
+}
+if (process.env.BUILD === 'min') {
   outputs = [
     {
       file: 'dist/vue-d2b.min.js',
@@ -64,6 +95,13 @@ if (process.env.NODE_ENV === 'production') {
     }
   ];
 
+
+  plugins.push(
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.VUE_ENV': JSON.stringify('browser')
+    })
+  );
   plugins.push(uglify());
 }
 

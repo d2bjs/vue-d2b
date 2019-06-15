@@ -25,6 +25,7 @@
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-typescript": "^1.0.1",
     "rollup-plugin-uglify": "^6.0.2",
     "rollup-plugin-vue": "^4.7.2",
@@ -44,9 +45,11 @@
   "private": false,
   "scripts": {
     "build": "vue-cli-service build",
-    "build-bundle": "yarn build-bundle:uglified && yarn build-bundle:prod",
-    "build-bundle:prod": "rollup -c rollup.config.js -g d3-selection:d3,d3-transition:d3,d2b:d2b,vue:Vue",
-    "build-bundle:uglified": "NODE_ENV=production rollup -c rollup.config.js -g d3-selection:d3,d3-transition:d3,d2b:d2b,vue:Vue",
+    "build-bundle": "yarn build-bundle:cjs && yarn build-bundle:js && yarn build-bundle:min",
+    "build-bundle:cjs": "BUILD=cjs yarn build-rollup",
+    "build-bundle:js": "BUILD=js yarn build-rollup",
+    "build-bundle:min": "BUILD=min yarn build-rollup",
+    "build-rollup": "rollup -c rollup.config.js -g d3-selection:d3,d3-transition:d3,d2b:d2b,vue:Vue",
     "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve"
   },
